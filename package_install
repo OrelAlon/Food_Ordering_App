@@ -39,3 +39,5 @@ npx create-react-app client
 
     and from the backend folder : npm run dev
 
+2:
+npm i axios react-router-dom uuid react-transition-group

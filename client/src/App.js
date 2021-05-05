@@ -1,11 +1,23 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
 
-function App() {
+import './App.css';
+import { Fragment } from 'react';
+
+const App = () => {
   return (
-    <div className='App'>
-      <header className='App-header'>I'm working!</header>
-    </div>
+    <Router>
+      <Fragment>
+        <Navbar />
+        <header>I'm Working!</header>
+        <Swicth>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/about' component={About} />
+        </Swicth>
+      </Fragment>
+    </Router>
   );
-}
+};
 
 export default App;
