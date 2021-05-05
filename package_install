@@ -1,0 +1,41 @@
+in the roots install:
+
+1:
+npm init -y  
+(change the main )
+
+2:
+npm i express bcryptjs jsonwebtoken config express-validator mongoose 
+
+express - web framework to handle routing
+bcryptjs - to handle hashing our passwords
+jsonwebtoken - for authentication to create JWT -to access protcted routson our server
+config- for global verbel
+express-validator - to validate any body data 
+mongoose - to deal with database and create models
+
+3:
+npm i -D nodemon concurrently 
+("test" change to => "start" : "node server.js"
+"server" : "nodemon server.js")
+
+nodemon - allow us to keep watching our server (no need to restarting it evrey time)
+concurrently - allow us to basically run our backend and frontend react at the same time
+
+## to run the Server ==> npm run server
+
+
+
+client install:
+
+1:
+npx create-react-app client
+(in the package.json on the backend => to add after "server" =>)
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+    (in the package.json on the client => to add in the end of the file =>)
+    "proxy": "http://localhost:5000"
+
+    and from the backend folder : npm run dev
+

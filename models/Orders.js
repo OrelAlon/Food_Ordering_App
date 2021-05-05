@@ -5,22 +5,29 @@ const OrdersSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users',
   },
-  restaurant: {
+  name: {
     type: String,
     required: true,
   },
-  diners: {
+  description: {
+    type: String,
+    required: true,
+  },
+  price: {
     type: Number,
     required: true,
   },
-  phone: {
+  countInStock: {
     type: Number,
     required: true,
   },
-  date: {
-    type: Date,
+  imageUrl: {
+    type: String,
     required: true,
   },
 });
 
 module.exports = mongoose.model('orders', OrdersSchema);
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
