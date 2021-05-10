@@ -6,6 +6,7 @@ const config = require('config');
 const { validationResult, check } = require('express-validator');
 
 const User = require('../models/User');
+const { use } = require('./auth');
 
 // @route    POST api/users
 // @desc     Regiter a user
@@ -66,5 +67,13 @@ router.post(
     }
   }
 );
+// @route    GET api/users
+// @desc     Get a user
+// @access   Public
+
+router.get('/', async (req, res) => {
+  let users = await User.find();
+  res.json(users).send();
+});
 
 module.exports = router;

@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const OrdersSchema = mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'users',
-  },
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'users',
+  // },
   name: {
     type: String,
     required: true,
@@ -17,10 +17,7 @@ const OrdersSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  countInStock: {
-    type: Number,
-    required: true,
-  },
+
   imageUrl: {
     type: String,
     required: true,

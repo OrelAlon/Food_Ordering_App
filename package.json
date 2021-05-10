@@ -9,6 +9,7 @@
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node seederScript.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
@@ -17,9 +18,12 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "corss": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.10.1",
     "jsonwebtoken": "^8.5.1",
+    "mdb-ui-kit": "^3.5.1",
     "mongoose": "^5.12.7"
   },
   "devDependencies": {
