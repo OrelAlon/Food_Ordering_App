@@ -1,17 +1,24 @@
-.category-container {
-  margin-top: 50px;
-  margin-left: 40px;
-}
 .category-box {
   height: 10vh;
   margin: 10px;
   margin-left: 30px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 30px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   border: solid black 1px;
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
+}
+@media only screen and (max-width: 1000px) {
+  /* For tablets: */
+  .category-box {
+    height: 10vh;
+    margin: 0;
+  }
+  .category-container {
+    display: flex;
+    justify-content: space-between;
+  }
 }

@@ -24,7 +24,8 @@
     "express-validator": "^6.10.1",
     "jsonwebtoken": "^8.5.1",
     "mdb-ui-kit": "^3.5.1",
-    "mongoose": "^5.12.7"
+    "mongoose": "^5.12.7",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.2",

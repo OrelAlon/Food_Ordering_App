@@ -1,7 +1,20 @@
 .dishes-page {
   display: grid;
-  grid-template-columns: 0.6fr 1.5fr;
+  grid-template-columns: 0.4fr 1.5fr 0.6fr;
   grid-template-rows: 1fr;
   gap: 0px 0;
   grid-template-areas: '. .';
+}
+@media only screen and (max-width: 1000px) {
+  /* For tablets: */
+  .dishes-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0px 0px;
+    grid-template-areas:
+      '.'
+      '.'
+      '.';
+  }
 }

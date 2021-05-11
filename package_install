@@ -41,3 +41,6 @@ npx create-react-app client
 
 2:
 npm i axios react-router-dom uuid react-transition-group
+
+3:
+npm install sweetalert
