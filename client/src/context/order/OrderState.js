@@ -13,22 +13,7 @@ import {
 
 const OrderState = (props) => {
   const initialState = {
-    orders: [
-      {
-        name: 'Meat',
-        description: 'Amazing steak with egg on top',
-        price: 499,
-        imageUrl:
-          'https://www.cookingclassy.com/wp-content/uploads/2019/07/steak-marinade-12-788x1182.jpg',
-      },
-      {
-        name: 'tost',
-        description: 'Amazing tost with egg on top',
-        price: 30,
-        imageUrl:
-          'https://www.cookingclassy.com/wp-content/uploads/2019/07/steak-marinade-12-788x1182.jpg',
-      },
-    ],
+    orders: [],
   };
   const [state, dispatch] = useReducer(orderReducer, initialState); //
   // Add Order
@@ -49,6 +34,7 @@ const OrderState = (props) => {
     <OrderContext.Provider
       value={{
         orders: state.orders,
+        dispatch,
       }}
     >
       {props.children}

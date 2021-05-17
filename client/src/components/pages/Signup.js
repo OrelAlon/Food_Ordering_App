@@ -5,7 +5,7 @@ import '../../css/login.css';
 import swal from 'sweetalert';
 
 const Signup = () => {
-  const [error, setError] = useState('');
+  const [errorMsg, setErrorMsg] = useState('orel');
   const [user, setUser] = useState({
     name: '',
     phone: '',
@@ -30,7 +30,12 @@ const Signup = () => {
         text: 'The passwords must be the same!',
       });
     }
-    await signup(user);
+
+    const response = await signup(user);
+    if (response.errors && response.errors.length > 0) {
+      setErrorMsg(response.errors[0].msg);
+      return;
+    }
     history.push('/dishes');
   };
 
@@ -39,6 +44,7 @@ const Signup = () => {
       <div id='bg'></div>
 
       <form onSubmit={onSubmit}>
+        <p>{errorMsg}</p>
         <label htmlFor=''></label>
         <input
           type='text'
@@ -57,16 +63,6 @@ const Signup = () => {
           value={phone}
           onChange={onChange}
         ></input>
-        {/* <label htmlFor=''></label>
-        <input
-          type='text'
-          name=''
-          placeholder='Address'
-          className='Address'
-          value={phone}
-          onChange={onChange}
-
-        ></input> */}
 
         <label htmlFor=''></label>
         <input

@@ -9,6 +9,7 @@ const Login = () => {
     email: '',
     password: '',
   });
+  const [errorMsg, setErrorMsg] = useState('orel');
   const history = useHistory();
 
   const { email, password } = user;
@@ -16,17 +17,25 @@ const Login = () => {
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
   const onLogin = async (e) => {
     e.preventDefault();
+    try {
+      const response = await login(user);
 
-    const response = await login(user);
-    localStorage.setItem('token', JSON.stringify(response.data));
-
-    history.push('/dishes');
+      if (response.msg) {
+        setErrorMsg(response.msg);
+        return;
+      }
+      localStorage.setItem('token', JSON.stringify(response.data));
+      history.push('/dishes');
+    } catch (e) {
+      console.log(e);
+    }
   };
   return (
     <div className='login-page'>
       <div id='bg'></div>
 
       <form onSubmit={onLogin}>
+        <p>{errorMsg}</p>
         <label htmlFor=''></label>
         <input
           type='text'

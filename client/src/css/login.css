@@ -23,7 +23,6 @@ body {
   background: url(https://picsum.photos/seed/picsum/1200/600) no-repeat center
     center fixed;
   background-size: cover;
-  -webkit-filter: blur(3px);
 }
 
 form {
