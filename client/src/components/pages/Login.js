@@ -37,7 +37,7 @@ const Login = () => {
   };
   return (
     <div className='login-page'>
-      <div id='bg'></div>
+      <div className='bg'></div>
 
       <form onSubmit={onLogin}>
         <label htmlFor=''></label>

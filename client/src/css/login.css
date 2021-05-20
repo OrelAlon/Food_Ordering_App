@@ -23,7 +23,7 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-#bg {
+.bg {
   position: fixed;
   left: 0;
   top: 0;
