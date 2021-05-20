@@ -44,18 +44,14 @@ const OneItemCart = () => {
                 </div>
                 <div className='product_rate_info'>
                   <span
-                    className='count-minus'
+                    className='fa fa-minus-circle'
                     onClick={() => onRemoveItem(item.dish)}
-                  >
-                    -
-                  </span>
+                  ></span>
                   <span className='count'> {item.mealCount}</span>
                   <span
-                    className='count-plus'
+                    className='fa fa-plus-circle'
                     onClick={() => onAddItem(item.dish)}
-                  >
-                    +
-                  </span>
+                  ></span>
                 </div>
               </div>
             </div>

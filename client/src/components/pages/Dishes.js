@@ -3,6 +3,9 @@ import axios from 'axios';
 import Dish from '../Dish';
 import Category from '../Category';
 import Cart from '../Cart';
+
+import '../../App.css';
+
 const Dishes = (props) => {
   const [dishes, setDishes] = useState([]);
   const [category, setCategory] = useState([]);
@@ -25,14 +28,14 @@ const Dishes = (props) => {
   const { dish } = props;
   return (
     <div className='dishes-page'>
-      <div className='category-container '>
+      <div className='category-container'>
         {category.map((item) => (
           <Category key={item} category={item} />
         ))}{' '}
       </div>
-      <div className='food-container '>
-        {dishes.map((item) => (
-          <Dish key={item.name} dish={item} />
+      <div className='food-container'>
+        {dishes.map((item, index) => (
+          <Dish key={index} dish={item} />
         ))}
       </div>
       <div className='cart-container'>

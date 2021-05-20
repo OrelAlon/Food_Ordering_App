@@ -1,0 +1,71 @@
+.payment-page {
+  background: url(https://hanamal24.rest.co.il/img/0485/749.jpg) no-repeat
+    center center fixed;
+  position: absolute;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.payment-card {
+  background-color: #202020;
+  opacity: 0.9;
+  width: 60%;
+  text-align: center;
+  margin: auto;
+
+  color: goldenrod;
+  border-radius: 10px;
+}
+.center-card {
+  margin-top: 50px;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+}
+.order_price {
+  width: 50%;
+  margin: auto;
+  font-size: larger;
+}
+.center-card h3 {
+  text-decoration: underline;
+}
+.client-order,
+.client-price {
+  border-bottom: solid goldenrod 1px;
+  margin: 50px;
+}
+.client-order {
+  border-top: solid goldenrod 1px;
+}
+.input-text {
+  font-size: larger;
+  margin: 10px;
+}
+.input-address {
+  width: 212px;
+  border: 1px solid;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  border-right-color: rgba(60, 60, 60, 0.35);
+  border-top-color: rgba(60, 60, 60, 0.35);
+  border-left-color: rgba(80, 80, 80, 0.4 5);
+  background-color: rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  padding: 8px 4px 8px 10px;
+  font: bold 0.875em/1.25em 'Open Sans Condensed', sans-serif;
+  letter-spacing: 0.075em;
+  color: goldenrod;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  /* margin-bottom: 10px; */
+  text-align: center;
+  margin: 10px;
+  border: solid goldenrod 1px;
+}
+.send-btn button {
+  margin: 20px;
+  border: 1px goldenrod solid;
+  background-color: #202020;
+  color: goldenrod;
+  padding: 10px 12px;
+}

@@ -1,5 +1,17 @@
 import * as TYPES from '../types';
 
+const savedOrder = (orders) => {
+  // localStorage.setItem('orders', JSON.stringify(orders));
+};
+export const loadOrder = () => {
+  //   const rowOrder = localStorage.getItem('orders');
+  //   let correntOrder = [];
+  //   if (rowOrder) {
+  //     correntOrder = JSON.parse(rowOrder);
+  //   }
+  //   return correntOrder;
+};
+
 export default (state, action) => {
   switch (action.type) {
     case TYPES.ADD_ORDER:
@@ -11,17 +23,22 @@ export default (state, action) => {
       } else {
         state.orders.push(action.payload);
       }
+      // savedOrder(state.orders);
       return {
         ...state,
         orders: [...state.orders],
         loading: false,
       };
     case TYPES.DELETE_ORDER:
+      const ordersAFTERdELELE = state.orders.filter(
+        (order) => order.dish.id !== action.payload
+      );
+
+      // savedOrder(ordersAFTERdELELE);
+
       return {
         ...state,
-        orders: state.orders.filter(
-          (order) => order.dish.id !== action.payload
-        ),
+        orders: ordersAFTERdELELE,
         loading: false,
       };
     // case UPDATE_CONTACT:

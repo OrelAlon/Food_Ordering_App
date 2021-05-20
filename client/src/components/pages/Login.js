@@ -9,7 +9,7 @@ const Login = () => {
     email: '',
     password: '',
   });
-  const [errorMsg, setErrorMsg] = useState('orel');
+  const [errorMsg, setErrorMsg] = useState('');
   const history = useHistory();
 
   const { email, password } = user;
@@ -22,6 +22,7 @@ const Login = () => {
 
       if (response.msg) {
         setErrorMsg(response.msg);
+
         return;
       }
       localStorage.setItem('token', JSON.stringify(response.data));
@@ -35,7 +36,6 @@ const Login = () => {
       <div id='bg'></div>
 
       <form onSubmit={onLogin}>
-        <p>{errorMsg}</p>
         <label htmlFor=''></label>
         <input
           type='text'
@@ -59,10 +59,13 @@ const Login = () => {
         <button className='login-btn' type='submit' onClick={onLogin}>
           login{' '}
         </button>{' '}
+        <p className='error-msg'>{errorMsg}</p>
         <br />
         <br />
         <br />
-        <p>First time here? </p>
+        <p className='text'>
+          First Time Here?<i className='fas fa-arrow-down'></i>
+        </p>
         <Link to='/signup'>
           <button className='signup-btn'>sign up </button>
         </Link>

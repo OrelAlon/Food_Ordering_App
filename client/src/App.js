@@ -6,6 +6,8 @@ import About from './components/pages/About';
 import Signup from './components/pages/Signup';
 import Dishes from './components/pages/Dishes';
 import Payment from './components/pages/Payment';
+import OrderSent from './components/pages/OrderSent';
+import Test from './components/pages/Test';
 
 import OrderState from './context/order/OrderState';
 // import AuthState from './context/auth/AuthState';
@@ -27,6 +29,8 @@ const App = () => {
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/dishes' component={Dishes} />
             <Route exact path='/payment' component={Payment} />
+            <Route exact path='/ordersent' component={OrderSent} />
+            <Route exact path='/test' component={Test} />
           </Switch>
         </Fragment>
       </Router>

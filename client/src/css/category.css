@@ -1,15 +1,74 @@
-.category-box {
-  height: 10vh;
-  margin: 10px;
-  margin-left: 30px;
+.category-container {
+  position: fixed;
+  left: 750px;
+}
+
+/* new css */
+
+.category-box ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-box ul li {
+  background-color: #202020;
+
+  --c: goldenrod;
+  color: var(--c);
+  font-size: 16px;
+  border: 2px solid var(--c);
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
   text-align: center;
-  margin-top: 30px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  border: solid black 1px;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+}
+
+.category-box ul li span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+.category-box ul li:hover {
+  color: black;
+}
+
+.category-box ul li:hover span {
+  transform: translateY(0) scale(2);
+}
+
+.category-box ul li span:nth-child(1) {
+  --n: 1;
+}
+
+.category-box ul li span:nth-child(2) {
+  --n: 2;
+}
+
+.category-box ul li span:nth-child(3) {
+  --n: 3;
+}
+
+.category-box ul li span:nth-child(4) {
+  --n: 4;
 }
 @media only screen and (max-width: 1000px) {
   /* For tablets: */

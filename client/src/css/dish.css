@@ -5,66 +5,6 @@
   width: 40vw;
   margin-bottom: 10px;
 }
-.info-box {
-  background-color: rgb(195, 195, 195);
-  display: flex;
-  flex-direction: row;
-  color: rgb(46, 44, 44);
-  box-shadow: rgba(56, 50, 50, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  border-radius: 5px;
-  border: solid rgb(161, 159, 159) 1px;
-}
-.food-img {
-  width: 20%;
-  height: 180px;
-  border-radius: 5px;
-  border: black solid 1px;
-}
-
-/*  */
-
-h3 {
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-h3 {
-  font-size: 28px;
-}
-
-.info-box-horizontal {
-  /* flex-direction: row; */
-  align-items: center;
-}
-
-.info-box-bordered {
-  /* padding: 30px; */
-  border: 1px solid gray;
-}
-.info-box-content {
-  margin-left: 20px;
-  margin-top: -30px;
-  display: flex;
-  flex-direction: column;
-}
-.info-box-title {
-  width: 300px;
-  display: flex;
-}
-.food-price {
-  margin-left: 150px;
-  float: right;
-}
-
-.info-box-title h4 {
-  margin-top: 3px;
-  float: right;
-}
-.margin-food-box {
-  margin-top: 15px;
-}
-/* add to cart */
 
 @media only screen and (max-width: 1000px) {
   .food-container {
@@ -72,4 +12,91 @@ h3 {
     margin-top: 30px;
     width: 100%;
   }
+}
+
+/* new css */
+.center {
+  margin-left: 250px;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.card {
+  color: goldenrod;
+  border: solid 2px;
+  width: 480px;
+  height: 180px;
+  background-color: #202020;
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+}
+
+.card h3 {
+  margin-left: 50px;
+  text-align: center;
+}
+
+.card .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.card .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.card .general {
+  width: 440px;
+  height: 100%;
+  padding-left: 30px;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+.general {
+  margin: 10px;
+}
+.general p {
+  margin-left: 150px;
+}
+
+.card .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+}
+
+.more {
+  position: absolute;
+  z-index: 20;
+}
+.user-card img {
+  object-fit: cover;
+}
+.add-btn {
+  background-color: goldenrod;
+  opacity: 0.9;
+  color: black;
+  padding: 4px;
+  border: goldenrod 1px solid;
+  border-radius: 5px;
+}
+.add-btn:hover {
+  color: white;
+  background-color: rgb(73, 71, 71);
 }

@@ -24,8 +24,23 @@ router.get('/', auth, async (req, res) => {
 // @route    POST api/orders
 // @desc     Add a new order
 // @access   Privte
-router.post('/', (req, res) => {
-  res.send('Log in user');
+router.post('/', async (req, res) => {
+  const { name, description, price, imageUrl } = req.body;
+  try {
+    const order = new Order({
+      user: req.user.id,
+      name,
+      description,
+      price,
+      imageUrl,
+    });
+
+    const savedOrder = await order.save();
+    return res.json(savedOrder);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
 });
 
 // @route    PUT api/orders/:id

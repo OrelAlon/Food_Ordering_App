@@ -1,7 +1,7 @@
 @import '~mdb-ui-kit/css/mdb.min.css';
 
 .navbar {
-  background-color: black;
+  background-color: #202020;
   color: goldenrod;
 }
 ul {
@@ -10,7 +10,6 @@ ul {
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
 
 body {
-  padding: 40px;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -20,8 +19,8 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(https://picsum.photos/seed/picsum/1200/600) no-repeat center
-    center fixed;
+  background: url(https://www.my-events.co.il/wp-content/uploads/2016/09/namal24-a1.jpg)
+    no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -51,7 +50,7 @@ form button {
   padding: 8px 4px 8px 10px;
   font: bold 0.875em/1.25em 'Open Sans Condensed', sans-serif;
   letter-spacing: 0.075em;
-  color: #fff;
+  color: black;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   /* margin-bottom: 10px; */
   text-align: center;
@@ -80,18 +79,19 @@ form input.pass {
   text-transform: uppercase;
 }
 :-ms-input-placeholder {
-  color: #ccc;
+  color: black;
   text-transform: uppercase;
 }
 
 .login-btn[type='submit'] {
   margin-bottom: 0;
   margin-top: 25px;
-  color: #3f898a;
+  color: goldenrod;
+  font-weight: bold;
   letter-spacing: 0.05em;
   text-shadow: 0 1px 0 #133d3e;
   text-transform: uppercase;
-  background: #225556;
+  background: black;
   border-top-color: #9fb5b5;
   border-left-color: #608586;
   border-bottom-color: #1b4849;
@@ -101,9 +101,20 @@ form input.pass {
 .signup-btn {
   text-transform: uppercase;
   margin-top: 20px;
-  background: pink;
+  background: goldenrod;
   border-top-color: #9fb5b5;
   border-left-color: black;
   border-bottom-color: pink;
   border-right-color: #1e4d4e;
+}
+.error-msg {
+  color: red;
+}
+.text {
+  color: black;
+  background-color: goldenrod;
+  text-align: center;
+}
+.fa-arrow-down {
+  padding: 5px;
 }

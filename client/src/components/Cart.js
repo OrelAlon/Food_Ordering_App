@@ -23,7 +23,9 @@ const Cart = () => {
   return (
     <div className='order_summary'>
       <div className='summary_card'>
-        <OneItemCart />
+        <div className='one-dish'>
+          <OneItemCart />
+        </div>
         <hr />
         <div className='order_price'>
           <p>Order summary</p>
@@ -38,9 +40,11 @@ const Cart = () => {
           <p>Total Amount</p>
           <h4>${sumOrderClient + 10}</h4>{' '}
         </div>
-        <Link to='/payment'>
-          <button>Procced to payment</button>
-        </Link>
+        <div className='center-btn'>
+          <Link to='/payment'>
+            <button className='pay-btn'>Procced to payment</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

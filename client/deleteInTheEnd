@@ -22,26 +22,31 @@ const Dish = (props) => {
   const { dish } = props;
 
   return (
-    <div className='center' id={dish.category}>
-      <div className='card'>
-        <div className='additional'>
-          <div className='user-card'>
-            <img
-              src={dish.imageUrl}
-              role='img'
-              aria-labelledby='title desc'
-              className='center'
-            ></img>
+    <div id={dish.category}>
+      <div
+        id={dish.category}
+        className='info-box info-box-horizontal info-box-bordered'
+      >
+        <img className='food-img' src={dish.imageUrl} alt=''></img>
+        <div className='info-box-content'>
+          <div className='info-box-title'>
+            <p>{dish.name}</p>
+            <p className='food-price'>{dish.price}$</p>
           </div>
-        </div>
-        <div className='general'>
-          <h3>{dish.name}</h3>
           <p>{dish.description}</p>
-          <button onClick={addToCart} className='more add-btn'>
+          {/* <div className='food-count'>
+            <button onClick={minusCount}>-</button>
+            {mealCount}
+            <button onClick={plusCount}>+</button>
+          </div> */}
+        </div>
+        <div className='div-add-btn'>
+          <button className='add-btn' onClick={addToCart}>
             Add To Cart
           </button>
         </div>
       </div>
+      <div className='margin-food-box'></div>
     </div>
   );
 };

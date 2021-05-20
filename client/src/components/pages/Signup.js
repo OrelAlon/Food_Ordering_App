@@ -32,6 +32,7 @@ const Signup = () => {
     }
 
     const response = await signup(user);
+    console.log(response);
     if (response.errors && response.errors.length > 0) {
       setErrorMsg(response.errors[0].msg);
       return;
@@ -44,7 +45,6 @@ const Signup = () => {
       <div id='bg'></div>
 
       <form onSubmit={onSubmit}>
-        <p>{errorMsg}</p>
         <label htmlFor=''></label>
         <input
           type='text'
@@ -91,6 +91,8 @@ const Signup = () => {
           value={password2}
           onChange={onChange}
         ></input>
+        <br />
+        <p className='error-msg'>{errorMsg}</p>
         <br />
         <button className='signup-btn' onClick={handleSignUp}>
           sign up{' '}
