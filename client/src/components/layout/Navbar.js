@@ -8,12 +8,12 @@ const Navbar = ({ title, icon }) => {
         {title} <i className={icon} />
       </h1>
       <ul>
-        <li>
-          <Link to='/'>Login</Link>
-        </li>{' '}
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
+        <Link to='/'>
+          <li>Login</li>{' '}
+        </Link>
+        <Link to='/about'>
+          <li>About</li>
+        </Link>
       </ul>
     </div>
   );

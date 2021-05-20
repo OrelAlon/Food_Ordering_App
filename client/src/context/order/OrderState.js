@@ -4,7 +4,7 @@ import orderReducer, { loadOrder } from './orderReducer';
 
 const OrderState = (props) => {
   const initialState = {
-    orders: [],
+    orders: loadOrder(),
   };
   const [state, dispatch] = useReducer(orderReducer, initialState); //
 

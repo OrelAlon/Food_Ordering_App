@@ -4,8 +4,18 @@
   background-color: #202020;
   color: goldenrod;
 }
-ul {
+.navbar ul {
   list-style-type: none;
+  color: goldenrod;
+  display: flex;
+}
+.navbar li {
+  margin-right: 20px;
+  margin-top: 10px;
+  color: goldenrod;
+}
+.navbar h1 {
+  margin: 10px 20px;
 }
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
 

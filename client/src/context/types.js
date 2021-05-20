@@ -22,3 +22,7 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const deleteOrder = (orderId) => {
   return { type: DELETE_ORDER, payload: orderId };
 };
+
+export const loginClear = () => {
+  return { type: LOGIN_SUCCESS };
+};

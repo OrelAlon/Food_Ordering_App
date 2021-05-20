@@ -18,6 +18,7 @@
   padding: 25px;
   text-align: center;
   color: gray;
+  border-radius: 10px;
 }
 .about-info {
   width: 40vw;

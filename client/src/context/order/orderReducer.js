@@ -1,15 +1,23 @@
 import * as TYPES from '../types';
 
 const savedOrder = (orders) => {
-  // localStorage.setItem('orders', JSON.stringify(orders));
+  const userData = localStorage.getItem('token');
+  const user = JSON.parse(userData);
+  const userOrders = { userId: user.id, orders };
+  localStorage.setItem('userOrders-' + user.id, JSON.stringify(userOrders));
 };
 export const loadOrder = () => {
-  //   const rowOrder = localStorage.getItem('orders');
-  //   let correntOrder = [];
-  //   if (rowOrder) {
-  //     correntOrder = JSON.parse(rowOrder);
-  //   }
-  //   return correntOrder;
+  const userData = localStorage.getItem('token');
+  const user = JSON.parse(userData);
+  let rowOrder;
+  if (user) {
+    rowOrder = localStorage.getItem('userOrders-' + user.id);
+  }
+  let correntOrder = { userId: '', orders: [] };
+  if (rowOrder) {
+    correntOrder = JSON.parse(rowOrder);
+  }
+  return correntOrder.orders;
 };
 
 export default (state, action) => {
@@ -23,7 +31,7 @@ export default (state, action) => {
       } else {
         state.orders.push(action.payload);
       }
-      // savedOrder(state.orders);
+      savedOrder(state.orders);
       return {
         ...state,
         orders: [...state.orders],
@@ -34,21 +42,19 @@ export default (state, action) => {
         (order) => order.dish.id !== action.payload
       );
 
-      // savedOrder(ordersAFTERdELELE);
+      savedOrder(ordersAFTERdELELE);
 
       return {
         ...state,
         orders: ordersAFTERdELELE,
         loading: false,
       };
-    // case UPDATE_CONTACT:
-    //   return {
-    //     ...state,
-    //     contacts: state.contacts.map((contact) =>
-    //       contact._id === action.payload._id ? action.payload : contact
-    //     ),
-    //     loading: false,
-    //   };
+    case TYPES.LOGIN_SUCCESS:
+      return {
+        ...state,
+        orders: loadOrder(),
+        loading: false,
+      };
     // case DELETE_CONTACT:
     //   return {
     //     ...state,

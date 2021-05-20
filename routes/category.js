@@ -4,7 +4,7 @@ const category = require('../data/category');
 
 router.get('/', (req, res) => {
   console.log(category);
-  res.json(category).send();
+  res.json(category);
 });
 
 module.exports = router;

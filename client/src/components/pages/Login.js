@@ -3,8 +3,11 @@ import { Link, useHistory } from 'react-router-dom';
 import { login } from '../../sherd/serverApi';
 import AlertContext from '../../context/alert/alertContext';
 import '../../css/login.css';
-
+import orderContext from '../../context/order/orderContext';
+import { loginClear } from '../../context/types';
 const Login = () => {
+  const { orders, dispatch } = useContext(orderContext);
+
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -26,6 +29,7 @@ const Login = () => {
         return;
       }
       localStorage.setItem('token', JSON.stringify(response.data));
+      dispatch(loginClear());
       history.push('/dishes');
     } catch (e) {
       console.log(e);

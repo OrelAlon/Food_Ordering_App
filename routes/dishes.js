@@ -4,7 +4,7 @@ const dishes = require('../data/dishes');
 
 router.get('/', (req, res) => {
   console.log(dishes);
-  res.json(dishes).send();
+  res.json(dishes);
 });
 
 module.exports = router;
